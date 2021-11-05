@@ -36,15 +36,20 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }*/
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true,
       ),
-      body: const Center(
-          child: Text('Text Text')
+      body: Center(
+        child: Text(
+          'Test Text'
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {  },
       ),
     );
   }
