@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widget/widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         fontFamily: 'Montserrat'
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'App Bar'),
     );
   }
 }
@@ -73,14 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Text(
-            'Click'
-        ),
-        onPressed: () {
-          print('test');
-        },
-      ),
+      floatingActionButton: FloatingCustomButton(),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -105,7 +99,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.white70,
+        selectedItemColor: Colors.white,
         onTap: _onItemTapped,
       ),
     );
