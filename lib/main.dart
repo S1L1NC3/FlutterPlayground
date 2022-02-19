@@ -62,18 +62,23 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          widget.title,
-          style: TextStyle(
-            fontWeight: FontWeight.bold
-          ),
-        ),
-        centerTitle: true,
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            pinned: true,
+            snap: false,
+            floating: false,
+            expandedHeight: 160.0,
+            flexibleSpace: const FlexibleSpaceBar(
+              title: Text('SliverAppBar'),
+              background: null,
+            ),
+          )
+        ],
       ),
-      body: Center(
+      /*body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+      ),*/
       floatingActionButton: FloatingCustomButton(),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
